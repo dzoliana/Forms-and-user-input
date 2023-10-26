@@ -9,6 +9,7 @@ const SimpleInput = (props) => {
     hasError: nameInputHasError,
     valueChangeHandler: nameChangedHandler,
     inputBlurHandler: nameBlurHandler,
+    reset: resetNameInput,
   } = useInput((value) => value.trim() !== "");
 
   // const [enteredName, setEnteredName] = useState("");
@@ -56,7 +57,7 @@ const SimpleInput = (props) => {
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
-    setEnteredNameTouched(true);
+    // setEnteredNameTouched(true);
 
     if (!enteredNameIsValid) {
       return;
@@ -64,14 +65,16 @@ const SimpleInput = (props) => {
 
     console.log(enteredName);
 
-    setEnteredName("");
-    setEnteredNameTouched(false);
+    /*     setEnteredName("");
+    setEnteredNameTouched(false); */
+
+    resetNameInput();
 
     setEnteredEmail("");
     setEnteredEmailTouched(false);
   };
 
-  const nameInputClasses = nameInputIsInvalid
+  const nameInputClasses = nameInputHasError
     ? "form-control invalid"
     : "form-control";
 
