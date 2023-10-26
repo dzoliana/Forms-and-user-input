@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import useInput from "../hooks/use-input";
 
 const SimpleInput = (props) => {
@@ -14,21 +13,12 @@ const SimpleInput = (props) => {
 
   // const [enteredName, setEnteredName] = useState("");
   // const [enteredNameTouched, setEnteredNameTouched] = useState(false);
-  /* const [formIsValid, setFormIsValid] = useState(false); */
 
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
 
   // const enteredNameIsValid = enteredName.trim() !== "";
   // const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
-
-  /*   useEffect(() => {
-    if (enteredNameIsValid) {
-      setFormIsValid(true);
-    } else {
-      setFormIsValid(false);
-    }
-  }, [enteredNameIsValid]); */
 
   const enteredEmailIsValid = enteredEmail.includes("@");
   const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
@@ -65,7 +55,7 @@ const SimpleInput = (props) => {
 
     console.log(enteredName);
 
-    /*     setEnteredName("");
+    /* setEnteredName("");
     setEnteredNameTouched(false); */
 
     resetNameInput();
