@@ -5,7 +5,7 @@ const initialInputState = {
   isTouched: false,
 };
 
-const inputStateaReducer = (state, action) => {
+const inputStateReducer = (state, action) => {
   if (action.type === "INPUT") {
     return { value: action.value, isTouched: state.isTouched };
   }
@@ -15,12 +15,12 @@ const inputStateaReducer = (state, action) => {
   if (action.type === "RESET") {
     return { isTouched: false, value: "" };
   }
-  return inputStateaReducer;
+  return inputStateReducer;
 };
 
 const useInput = (validateValue) => {
   const [inputState, dispatch] = useReducer(
-    inputStateaReducer,
+    inputStateReducer,
     initialInputState
   );
 
